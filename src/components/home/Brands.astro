@@ -1,0 +1,70 @@
+---
+import Title from '../ui/Title.astro'
+const brandsName = ['dvdo', 'hdl', 'kanex-pro', 'optoma-usa', 'puas', 'uniview']
+---
+
+<section class="m-4">
+	<div
+		class="m-auto flex max-w-2xl flex-wrap items-center justify-center gap-2 rounded-xl bg-about-brand bg-cover bg-center bg-no-repeat p-5 py-7 text-white lg:flex-nowrap"
+	>
+		<article>
+			<h3 class="text-xl font-bold">Servitec Multimedia & Interactiva</h3>
+			<p class="text-balance font-light leading-relaxed">
+				Es una empresa representante y mayorista de productos audiovisuales y de
+				control con más de 19 años de experiencia trabajando de la mano con
+				nuestros canales de distribución.
+			</p>
+		</article>
+		<div>
+			<a
+				href=""
+				class="m-2 inline-block rounded-3xl bg-white p-3 font-semibold text-secondary-original hover:bg-slate-200 hover:text-secondary-600"
+				>Cónocenos</a
+			>
+		</div>
+	</div>
+
+	<article class="my-7">
+		<Title> Representación de marca </Title>
+		<div class="">
+			<div
+				class="brands-slide flex w-full justify-center gap-6 overflow-x-scroll py-6 md:overflow-x-hidden"
+			>
+				{
+					brandsName.map((logo) => {
+						return (
+							<img
+								src={`/images/brands/${logo}.webp`}
+								alt={`Logo de la marca ${logo}`}
+								class="max-w-52 object-contain"
+								loading="lazy"
+							/>
+						)
+					})
+				}
+			</div>
+		</div>
+
+		<style>
+			@keyframes slide {
+				from {
+					transform: translateX(20%);
+				}
+				to {
+					transform: translateX(-80%);
+				}
+			}
+
+			@media (min-width: 768px) {
+				.brands-slide {
+					animation: 14s slide infinite linear;
+				}
+			}
+			@media (min-width: 1024px) {
+				.brands-slide {
+					animation: slide infinite linear;
+				}
+			}
+		</style>
+	</article>
+</section>

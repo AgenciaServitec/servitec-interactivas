@@ -1,8 +1,9 @@
-import animatations from "tailwindcss-animated"
+import animations from "tailwindcss-animated"
+import flowbite from "flowbite/plugin"
 
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',"./node_modules/flowbite/**/*.js"],
 	theme: {
 		extend: {
 			colors:{
@@ -45,8 +46,11 @@ export default {
 					'900': '#3d3d3d',
 					'original': '#292929',
 				},	
+			},
+			backgroundImage:{
+				"about-brand": "url('/images/bg-brands.webp')"
 			}
 		},
 	},
-	plugins: [animatations],
+	plugins: [animations,flowbite],
 }

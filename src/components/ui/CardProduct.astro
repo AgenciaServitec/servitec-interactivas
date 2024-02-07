@@ -1,0 +1,25 @@
+---
+interface Props {
+	imgUrl: string
+	title: string
+}
+
+const { imgUrl, title } = Astro.props
+---
+
+<article class="max-w-[310px]">
+	<figure>
+		<img src={imgUrl} alt="" class="aspect-square max-w-[300px]" />
+	</figure>
+	<figcaption class="flex flex-wrap justify-center">
+		<h5 class="text-center font-semibold text-secondary-original">
+			{title}
+		</h5>
+		<a
+			href="#contact"
+			class="mt-3 inline-block justify-center rounded-3xl bg-primary-original p-2 px-4 text-white"
+		>
+			Mas información
+		</a>
+	</figcaption>
+</article>

@@ -1,0 +1,52 @@
+---
+import InputField from '../ui/InputField.astro'
+import Title from '../ui/Title.astro'
+import Textarea from '../ui/Textarea.astro'
+import ContactInformation from './ContactInformation.astro'
+---
+
+<section class="p-4">
+	<Title>Solicita información</Title>
+
+	<div class="my-5 flex flex-wrap items-start justify-center gap-4">
+		<article class="w-full max-w-[500px]">
+			<form
+				action=""
+				class="mb-6 w-full max-w-[500px] rounded-2xl bg-about-brand bg-cover bg-center bg-no-repeat p-3 py-6"
+			>
+				<InputField
+					label="Nombre completo"
+					name="name"
+					placeholder="Nombres..."
+				/>
+				<InputField
+					label="Teléfono"
+					name="number"
+					typeInput="number"
+					placeholder="Teléfono.."
+				/>
+				<InputField
+					label="Correo Electrónico"
+					name="email"
+					typeInput="email"
+					placeholder="ejemplo@email.com"
+				/>
+				<Textarea />
+
+				<button
+					type="submit"
+					class="m-2 rounded-md bg-primary-original px-4 py-2 text-white"
+					>Enviar</button
+				>
+			</form>
+		</article>
+
+		<ContactInformation />
+	</div>
+</section>
+
+<script>
+	document.querySelector('form')?.addEventListener('submit', (e) => {
+		e.preventDefault()
+	})
+</script>
