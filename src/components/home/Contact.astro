@@ -5,7 +5,7 @@ import Textarea from '../ui/Textarea.astro'
 import ContactInformation from './ContactInformation.astro'
 ---
 
-<section class="p-4">
+<section class="p-4" id="contact">
 	<Title>Solicita información</Title>
 
 	<div class="my-5 flex flex-wrap items-start justify-center gap-4">
@@ -46,7 +46,13 @@ import ContactInformation from './ContactInformation.astro'
 </section>
 
 <script>
-	document.querySelector('form')?.addEventListener('submit', (e) => {
-		e.preventDefault()
-	})
+	document
+		.querySelector('form')
+		?.addEventListener('submit', (event: SubmitEvent) => {
+			event.preventDefault()
+
+			const formData = Object.fromEntries(
+				new FormData(event.target as HTMLFormElement)
+			)
+		})
 </script>
