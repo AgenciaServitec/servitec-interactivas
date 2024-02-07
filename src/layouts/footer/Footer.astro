@@ -1,0 +1,45 @@
+---
+import ItemContact from './ItemContact.astro'
+import ChevronRight from '../../components/icons/ChevronRight.astro'
+---
+
+<footer class="bg-tertiary-original p-4 text-tertiary-200">
+	<div
+		class="m-auto mb-3 grid max-w-screen-2xl grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
+	>
+		<section class="p-2">
+			<img src="/public/images/logo.webp" alt="Logo" class="max-w-48 py-2" />
+			<p class="mb-3 text-balance">
+				Representante y distribuidor de productos a diferentes canales de
+				distribucion del pais, con más de 19 años de experiencia en el rubro
+			</p>
+		</section>
+
+		<section>
+			<h5 class="mb-2 text-base font-bold text-white">DATOS DE CONTACTO</h5>
+			<ul class="px-3">
+				<ItemContact
+					title="Dirección"
+					text="Ca. Nestor Bermudez 113, Esquina con Av. Fernando Teran, Chorrillos - Lima"
+				/>
+				<ItemContact
+					title="Correo Electrónico"
+					text="contactos@servitecperu.com"
+				/>
+				<ItemContact title="Llámanos" text="+51 916796808" />
+			</ul>
+		</section>
+
+		<section>
+			<h5 class="mb-2 text-base font-bold text-white">
+				SERVITEC MULTIMEDIA & INTERACTIVAS
+			</h5>
+			<ul class="px-3">
+				<a href="" class="flex items-center gap-2 hover:text-primary-original">
+					<ChevronRight /> Productos
+				</a>
+			</ul>
+		</section>
+	</div>
+	<div class="m-auto h-[1px] w-full max-w-screen-2xl bg-tertiary-200"></div>
+</footer>

@@ -1,46 +1,27 @@
 ---
 import Bars from '../components/icons/Bars.astro'
+import ItemNavbarDesktop from './ItemNavbarDesktop.astro'
 ---
 
-<header class="flex items-center justify-between bg-white p-3 shadow-md">
-	<a href="/">
-		<img
-			src="/images/logo.webp"
-			alt="logo servitec"
-			class="animate-fade animate-duration-1000 w-48 lg:w-60"
-		/>
-	</a>
-
-	<button class="rounded-md bg-primary-original p-2 lg:hidden">
-		<Bars class="fill-white" />
-	</button>
-	<nav class="hidden gap-5 lg:flex">
-		<a class="" href="">
-			<span class="relative">
-				<span class="text-lg font-bold uppercase"> Inicio</span>
-			</span>
+<header class="bg-white p-3 shadow-md">
+	<div
+		class="justify-betweenflex m-auto flex max-w-screen-2xl items-center justify-between"
+	>
+		<a href="/">
+			<img
+				src="/images/logo.webp"
+				alt="logo servitec"
+				class="w-48 animate-fade animate-duration-1000 lg:w-60"
+			/>
 		</a>
-	</nav>
+
+		<button class="rounded-md bg-primary-original p-2 lg:hidden">
+			<Bars class="fill-white" />
+		</button>
+		<nav class="hidden items-center gap-6 lg:flex">
+			<ItemNavbarDesktop link="/" text="Inicio" />
+			<ItemNavbarDesktop link="#products" text="Productos" />
+			<ItemNavbarDesktop link="#contact" text="Contacto" />
+		</nav>
+	</div>
 </header>
-
-<style>
-	nav a:hover > span::before {
-		visibility: visible;
-		transform: scaleX(1);
-		height: 3px;
-	}
-
-	nav a > span::before {
-		position: absolute;
-		visibility: hidden;
-		left: 0;
-		bottom: -5px;
-		width: 100%;
-		height: 2px;
-		background-color: #3056a9;
-		content: '';
-		transform: scaleX(0);
-		transition: all 0.2s ease-in-out 0s;
-		opacity: 0.85;
-	}
-</style>
