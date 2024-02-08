@@ -1,5 +1,5 @@
 ---
-import Bars from '../components/icons/Bars.astro'
+import Drawer from './Drawer.astro'
 import ItemNavbarDesktop from './ItemNavbarDesktop.astro'
 ---
 
@@ -15,9 +15,8 @@ import ItemNavbarDesktop from './ItemNavbarDesktop.astro'
 			/>
 		</a>
 
-		<button class="rounded-md bg-primary-original p-2 lg:hidden">
-			<Bars class="fill-white" />
-		</button>
+		<Drawer />
+
 		<nav class="hidden items-center gap-6 lg:flex">
 			<ItemNavbarDesktop link="/" text="Inicio" />
 			<ItemNavbarDesktop link="#products" text="Productos" />
